@@ -1,6 +1,7 @@
 export default {
     async fetch(request, env) {
         let url = new URL(request.url);
+        console.log(url);
         if (url.pathname.startsWith('/')) {
             const hostname = url.hostname;
             if (hostname.includes('computer')){
