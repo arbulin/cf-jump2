@@ -13,10 +13,10 @@ export default {
             // }
             url.hostname = 'api-dev.laiguaba.com';
             let new_request = new Request(url, request);
-            let response = fetch(new_request);
+            return fetch(new_request);
             // 添加允许跨域访问的响应头
-            response.headers.set('Access-Control-Allow-Origin', '*');
-            return response;
+            //response.headers.set('Access-Control-Allow-Origin', '*');
+            //return response;
         }
         return env.ASSETS.fetch(request);
     },
