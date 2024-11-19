@@ -4,11 +4,11 @@ export default {
         if (url.pathname.startsWith('/')) {
             const hostname = url.hostname;
             if (hostname.includes('computer')){
-                url.hostname = env.api;
+                url.hostname = env.API;
             } else if (hostname.includes('index')){
-                url.hostname = env.h5;
+                url.hostname = env.H5;
             } else if (hostname.includes('register')){
-                url.hostname = env.reg;
+                url.hostname = env.REG;
             }
             let new_request = new Request(url, request);
             return fetch(new_request);
