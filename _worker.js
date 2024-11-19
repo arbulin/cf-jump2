@@ -11,7 +11,7 @@ export default {
             // } else if (hostname.includes('register')) {
             //     url.hostname = env.REG;
             // }
-            url.hostname = 'api-prod.laiguaba.com';
+            url.hostname = 'zs-h5.laiguaba.com';
             let new_request = new Request(url, request);
             return fetch(new_request);
             // 添加允许跨域访问的响应头
