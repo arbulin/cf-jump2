@@ -5,9 +5,9 @@ export default {
         if (url.pathname.startsWith('/')) {
             if (url.pathname.includes('/computer/')) {
                 url.hostname = env.API;
-            } else if (url.pathname.includes('/index')) {
+            } else if (url.pathname.includes('/h5/')) {
                 url.hostname = env.H5;
-            } else if (url.pathname.includes('/register')) {
+            } else if (url.pathname.includes('/rg/')) {
                 url.hostname = env.REG;
             } else if (url.pathname.includes('/computer-lottery-image')) {
                 url.hostname = env.OSS;
