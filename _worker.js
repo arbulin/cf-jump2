@@ -7,8 +7,14 @@ export default {
                 url.hostname = env.API;
             } else if (url.pathname.includes('/h5/')) {
                 url.hostname = env.H5;
+            } else if (url.pathname.includes('/static/')) {
+                url.hostname = env.H5;
+                url.pathname = '/h5' + url.pathname
             } else if (url.pathname.includes('/rg/')) {
                 url.hostname = env.REG;
+            } else if (url.pathname.includes('/assets/')) {
+                url.hostname = env.REG;
+                url.pathname = '/rg' + url.pathname
             } else if (url.pathname.includes('/computer-lottery-image') || url.pathname.includes('computer-lottery-avatar-image')) {
                 url.hostname = env.OSS;
             }
