@@ -3,12 +3,14 @@ export default {
         let url = new URL(request.url);
         console.log(url);
         if (url.pathname.startsWith('/')) {
-            if (url.pathname.includes('computer')) {
+            if (url.pathname.includes('/computer/')) {
                 url.hostname = env.API;
-            } else if (url.pathname.includes('index')) {
+            } else if (url.pathname.includes('/index')) {
                 url.hostname = env.H5;
-            } else if (url.pathname.includes('register')) {
+            } else if (url.pathname.includes('/register')) {
                 url.hostname = env.REG;
+            } else if (url.pathname.includes('/computer-lottery-image')) {
+                url.hostname = env.OSS;
             }
             // url.hostname = 'api-dev.laiguaba.com';
             let new_request = new Request(url, request);
