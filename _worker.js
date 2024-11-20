@@ -9,7 +9,7 @@ export default {
                 url.hostname = env.H5;
             } else if (url.pathname.includes('/rg/')) {
                 url.hostname = env.REG;
-            } else if (url.pathname.includes('/computer-lottery-image')) {
+            } else if (url.pathname.includes('/computer-lottery-image') || url.pathname.includes('computer-lottery-avatar-image')) {
                 url.hostname = env.OSS;
             }
             // url.hostname = 'api-dev.laiguaba.com';
