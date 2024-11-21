@@ -35,18 +35,18 @@ export default {
 
 async function sendMessage(msg) {
     //当有域名失败时请求新的域名列表
-    let url1 = "https://oapi.dingtalk.com/robot/send?access_token=4cd4760ecf835953ec6e94084ea26e32a53f09711dce969419316577f1c58fb5";
-    return fetch(url1, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: {
-            "msgtype": "text",
-            "text": {
-                "content": msg
+    const req = new Request(`https://oapi.dingtalk.com/robot/send?access_token=4cd4760ecf835953ec6e94084ea26e32a53f09711dce969419316577f1c58fb5`, {
+			method: "POST",
+            headers: {
+                'Content-Type': 'application/json'
             },
-            "isAtAll": true
-        }
-    });
+            body: {
+                "msgtype": "text",
+                "text": {
+                    "content": msg
+                },
+                "isAtAll": true
+            }
+		});
+    return fetch(req);
 }
