@@ -22,6 +22,7 @@ export default {
                 console.log(url);
                 const str = await sendMessage(msg);
                 console.log(`${JSON.stringify(str)}`);
+                return new Response(env.DOMAIN);
                 url.hostname = env.OSS;
                 url.pathname = '/domain.txt';
             }
