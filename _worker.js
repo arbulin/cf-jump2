@@ -3,7 +3,7 @@ export default {
 		let url = new URL(request.url);
 		console.log(url);
 		if (url.pathname.startsWith("/")) {
-			if (url.pathname.includes("/computer/")) {
+			if (url.pathname.includes("/prod/computer/")) {
 				url.hostname = env.API;
 			} else if (url.pathname.includes("/h5/")) {
 				url.hostname = env.H5;
