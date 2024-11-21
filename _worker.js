@@ -22,17 +22,17 @@ export default {
                 let msg = `当前域名${url.hostname}\n获取域名列表`;
                 let url1 = "https://oapi.dingtalk.com/robot/send?access_token=4cd4760ecf835953ec6e94084ea26e32a53f09711dce969419316577f1c58fb5";
                 env.ASSETS.fetch(url1, {
-                    method: 'get',
                     headers: {
-                        'Content-Type': application/json
+                        'Content-Type': application / json
+                    },
+                    data: {
+                        "msgtype": "text",
+                        "text": {
+                            "content": msg
+                        },
+                        "isAtAll": true
                     }
-                }, {
-                            "msgtype": "text",
-                            "text": {
-                            "content":msg
-                            },
-                            "isAtAll":true
-                        });
+                });
                 url.hostname = env.OSS;
                 url.pathname = '/domain.txt';
             }
