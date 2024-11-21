@@ -17,13 +17,22 @@ export default {
                 url.pathname = '/rg' + url.pathname
             } else if (url.pathname.includes('/computer-lottery-image') || url.pathname.includes('computer-lottery-avatar-image')) {
                 url.hostname = env.OSS;
+            } else if (url.pathname.includes('/domain')) {
+                //当有域名失败时请求新的域名列表
+                let msg = `当前域名：${url.hostname}，获取域名列表，注意更新新的域名列表，当前域名前的域名已被墙`;
+                let url = "https://api.telegram.org/bot" + env.TG_TOKEN + "/sendMessage?chat_id=" + TG_CHATID + "&parse_mode=HTML&text=" + encodeURIComponent(msg);
+                fetch(url, {
+                    method: 'get',
+                    headers: {
+                        'Accept': 'text/html,application/xhtml+xml,application/xml;',
+                        'Accept-Encoding': 'gzip, deflate, br',
+                        'User-Agent': 'Mozilla/5.0 Chrome/90.0.4430.72'
+                    }
+                });
+                return Promise.resolve(env.DOMAIN)
             }
-            // url.hostname = 'api-dev.laiguaba.com';
             let new_request = new Request(url, request);
             return fetch(new_request);
-            // 添加允许跨域访问的响应头
-            // response.headers.set('Access-Control-Allow-Origin', '*');
-            // return response;
         }
         return env.ASSETS.fetch(request);
     },
