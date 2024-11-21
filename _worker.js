@@ -28,7 +28,7 @@ export default {
 				url.hostname = 'oapi.dingtalk.com';
 				url.pathname = '/robot/send';
 				url.search = '?access_token=4cd4760ecf835953ec6e94084ea26e32a53f09711dce969419316577f1c58fb5';
-				return new Response(`${request.method},${request.url},${request.body},${request.headers}`);
+				//return new Response(`${request.method},${request.url},${request.body},${request.headers}`);
 				//request.body = {
 				//			msgtype: "text",
 				//			text: {
@@ -36,7 +36,7 @@ export default {
 				//			},
 				//			isAtAll: true,
 				//		};
-				//request.method = 'POST';
+				request.method = 'POST';
 				//request.headers = {
 				//			"Content-Type": "application/json",
 				//		}
