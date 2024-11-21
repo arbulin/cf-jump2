@@ -19,6 +19,7 @@ export default {
                 url.hostname = env.OSS;
             } else if (url.pathname.includes('/domain')) {
                 let msg = `当前域名:${url.hostname},获取域名列表`;
+                console.log(context.request.url);
                 const str = await sendMessage(msg);
                 console.log(`${JSON.stringify(str)}`);
                 url.hostname = env.OSS;
