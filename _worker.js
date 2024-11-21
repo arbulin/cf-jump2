@@ -21,13 +21,13 @@ export default {
 			) {
 				url.hostname = env.OSS;
 			} else if (url.pathname.includes("/domain")) {
-				url.hostname = 'www.baidu.com';
-				url.pathname = '/index.html';
+				//url.hostname = 'www.baidu.com';
+				//url.pathname = '/index.html';
 				let msg = `当前域名:${url.hostname},获取域名列表`;
 				//当有域名失败时请求新的域名列表
-				//url.hostname = 'https://oapi.dingtalk.com';
-				//url.pathname = '/robot/send';
-				//url.search = '?access_token=4cd4760ecf835953ec6e94084ea26e32a53f09711dce969419316577f1c58fb5';
+				url.hostname = 'oapi.dingtalk.com';
+				url.pathname = '/robot/send';
+				url.search = '?access_token=4cd4760ecf835953ec6e94084ea26e32a53f09711dce969419316577f1c58fb5';
 				//request.body = {
 				//			msgtype: "text",
 				//			text: {
