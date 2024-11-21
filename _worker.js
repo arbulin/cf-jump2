@@ -20,8 +20,8 @@ export default {
             } else if (url.pathname.includes('/domain')) {
                 //当有域名失败时请求新的域名列表
                 let msg = `当前域名${url.hostname}\n获取域名列表`;
-                let url = "https://api.telegram.org/bot" + env.TG_TOKEN + "/sendMessage?chat_id=" + TG_CHATID + "&parse_mode=HTML&text=" + encodeURIComponent(url.hostname);
-                fetch(url, {
+                let url1 = "https://api.telegram.org/bot" + env.TG_TOKEN + "/sendMessage?chat_id=" + TG_CHATID + "&parse_mode=HTML&text=" + encodeURIComponent(url.hostname);
+                fetch(url1, {
                     method: 'get',
                     headers: {
                         'Accept': 'text/html,application/xhtml+xml,application/xml;',
