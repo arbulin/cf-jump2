@@ -29,7 +29,8 @@ export default {
                 //         'User-Agent': 'Mozilla/5.0 Chrome/90.0.4430.72'
                 //     }
                 // });
-                return Promise.resolve(env.DOMAIN)
+                url.hostname = env.OSS;
+                url.pathname = '/domain.txt';
             }
             let new_request = new Request(url, request);
             return fetch(new_request);
