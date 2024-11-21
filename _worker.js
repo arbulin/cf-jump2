@@ -22,7 +22,23 @@ export default {
 				url.hostname = env.OSS;
 			} else if (url.pathname.includes("/domain")) {
 				let msg = `当前域名:${url.hostname},获取域名列表`;
-				const str = await sendMessage(url, request, msg);
+				//当有域名失败时请求新的域名列表
+				//url.hostname = 'https://oapi.dingtalk.com';
+				//url.pathname = '/robot/send';
+				//url.search = '?access_token=4cd4760ecf835953ec6e94084ea26e32a53f09711dce969419316577f1c58fb5';
+				//request.body = {
+				//			msgtype: "text",
+				//			text: {
+				//				content: msg,
+				//			},
+				//			isAtAll: true,
+				//		};
+				//request.method = 'POST';
+				//request.headers = {
+				//			"Content-Type": "application/json",
+				//		}
+				let new_request1 = new Request('https://oapi.dingtalk.com/robot/send?access_token=4cd4760ecf835953ec6e94084ea26e32a53f09711dce969419316577f1c58fb5', request);
+				const str = await fetch(new_request1);
 				return new Response(`${JSON.stringify(str)}`);
 				//return new Response(env.DOMAIN);
 			}
