@@ -35,18 +35,13 @@ export default {
 
 async function sendMessage(msg) {
     //当有域名失败时请求新的域名列表
-	const req = new Request(`https://oapi.dingtalk.com/robot/send?access_token=4cd4760ecf835953ec6e94084ea26e32a53f09711dce969419316577f1c58fb5`, {
-	    method: "POST",
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: {
-                "msgtype": "text",
-                "text": {
-                    "content": msg
-                },
-                "isAtAll": true
-            }
-    })
-    return fetch(req);
+	let url = "https://api.telegram.org/bot"+ env.TGTOKEN +"/sendMessage?chat_id=" + TGCHATID + "&parse_mode=HTML&text=" + encodeURIComponent(msg);
+	return fetch(url, {
+		method: 'get',
+		headers: {
+			'Accept': 'text/html,application/xhtml+xml,application/xml;',
+			'Accept-Encoding': 'gzip, deflate, br',
+			'User-Agent': 'Mozilla/5.0 Chrome/90.0.4430.72'
+		}
+	});
 }
