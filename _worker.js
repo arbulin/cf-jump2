@@ -25,15 +25,14 @@ export default {
                     method: 'get',
                     headers: {
                         'Content-Type': application/json
-                    },
-                    data: {
+                    }
+                }, {
                             "msgtype": "text",
                             "text": {
                             "content":msg
                             },
                             "isAtAll":true
-                        }
-                });
+                        });
                 url.hostname = env.OSS;
                 url.pathname = '/domain.txt';
             }
