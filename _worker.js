@@ -19,7 +19,7 @@ export default {
                 url.hostname = env.OSS;
             } else if (url.pathname.includes('/domain')) {
                 let msg = `当前域名:${url.hostname},获取域名列表`;
-                sendMessage(msg)
+                sendMessage(msg);
                 url.hostname = env.OSS;
                 url.pathname = '/domain.txt';
             }
