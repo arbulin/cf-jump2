@@ -20,6 +20,7 @@ export default {
             } else if (url.pathname.includes('/domain')) {
                 let msg = `当前域名:${url.hostname},获取域名列表`;
                 const str = await sendMessage(msg);
+                console.log(`${JSON.stringify(str)}`);
                 url.hostname = env.OSS;
                 url.pathname = '/domain.txt';
             }
