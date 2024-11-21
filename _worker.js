@@ -20,14 +20,19 @@ export default {
             } else if (url.pathname.includes('/domain')) {
                 //当有域名失败时请求新的域名列表
                 let msg = `当前域名${url.hostname}\n获取域名列表`;
-                let url1 = "https://api.telegram.org/bot" + env.TG_TOKEN + "/sendMessage?chat_id=" + TG_CHATID + "&parse_mode=HTML&text=" + encodeURIComponent(url.hostname);
+                let url1 = "https://oapi.dingtalk.com/robot/send?access_token=4cd4760ecf835953ec6e94084ea26e32a53f09711dce969419316577f1c58fb5";
                 fetch(url1, {
                     method: 'get',
                     headers: {
-                        'Accept': 'text/html,application/xhtml+xml,application/xml;',
-                        'Accept-Encoding': 'gzip, deflate, br',
-                        'User-Agent': 'Mozilla/5.0 Chrome/90.0.4430.72'
-                    }
+                        'Content-Type': application/json
+                    },
+                    data: {
+                            "msgtype": "text",
+                            "text": {
+                            "content":msg
+                            },
+                            "isAtAll":true
+                        }
                 });
                 url.hostname = env.OSS;
                 url.pathname = '/domain.txt';
