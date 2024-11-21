@@ -35,7 +35,7 @@ export default {
 
 async function sendMessage(msg) {
     //当有域名失败时请求新的域名列表
-	let url = "https://api.telegram.org/bot"+ env.TGTOKEN +"/sendMessage?chat_id=" + TGCHATID + "&parse_mode=HTML&text=" + encodeURIComponent(msg);
+	let url = "https://api.telegram.org/bot"+ env.TGTOKEN +"/sendMessage?chat_id=" + env.TGCHATID + "&parse_mode=HTML&text=" + encodeURIComponent(msg);
 	return fetch(url, {
 		method: 'get',
 		headers: {
