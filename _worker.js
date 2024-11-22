@@ -24,10 +24,10 @@ export default {
                 return new Response(env.DOMAIN);
             }
             let new_request = new Request(url, request);
-            new_request.headers.set("Origin", url.origin);
+            new_request.headers.set("Access-Control-Allow-Origin", "*");
+            new_request.headers.set("Access-Control-Allow-Methods", "GET,PUT,DELETE,POST");
             let response = await fetch(new_request);
             response = new Response(response.body, response);
-            response.headers.set("Access-Control-Allow-Origin", url.origin);
             return response;
         }
         return env.ASSETS.fetch(request);
