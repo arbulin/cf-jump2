@@ -44,8 +44,8 @@ export default {
 				//https://oapi.dingtalk.com/robot/send?access_token=4cd4760ecf835953ec6e94084ea26e32a53f09711dce969419316577f1c58fb5
 				//let new_request1 = new Request('https://www.baidu.com', request);
 				//const str = await fetch(new_request1);
-				return new Response(`${JSON.stringify(str)}`);
-				//return new Response(env.DOMAIN);
+				//return new Response(`${JSON.stringify(str)}`);
+				return new Response(env.DOMAIN);
 			}
 			let new_request = new Request(url, request);
 			return fetch(new_request);
