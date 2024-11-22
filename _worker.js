@@ -36,7 +36,7 @@ export default {
 				//			},
 				//			isAtAll: true,
 				//		};
-				request.method = 'POST';
+				//request.method = 'POST';
 				//request.headers = {
 				//			"Content-Type": "application/json",
 				//		}
